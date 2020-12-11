@@ -43,7 +43,7 @@ function renderToDom() {
              <td>${employee.id}</td>
              <td>${employee.title}</td>
              <td>${employee.annualSalary}</td>
-             <td>Delete</td>
+             <td><button class="deleteButton">Delete</button></td>
             </tr>
         `);
         $('#employeeList').append(employeeRow);
