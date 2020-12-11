@@ -25,7 +25,7 @@ function enterEmployee() {
     // render to DOM
     renderToDom();
     // clear inputs
-
+    clearInputs();
     // calculate totalMonthlySalaries
 
 } // end enterEmployee
@@ -49,3 +49,11 @@ function renderToDom() {
         $('#employeeList').append(employeeRow);
     }
 } // end renderToDom
+
+function clearInputs() {
+    $('#firstNameIn').val('');
+    $('#lastNameIn').val('');
+    $('#idIn').val('');
+    $('#titleIn').val('');
+    $('#salaryIn').val('');
+} // end clearInputs
