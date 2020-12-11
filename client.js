@@ -5,6 +5,7 @@ let employees = [];
 function handleReady() {
     console.log('JQ Loaded');
     $('#submitButton').on('click', enterEmployee);
+    $('#employeeList').on('click', '.deleteButton', deleteEmployee);
 } // end handleReady
 
 function enterEmployee() {
@@ -57,3 +58,9 @@ function clearInputs() {
     $('#titleIn').val('');
     $('#salaryIn').val('');
 } // end clearInputs
+
+function deleteEmployee() {
+    console.log('clicked delete');
+    $(this).closest('tr').remove();
+
+} // end deleteEmployee
