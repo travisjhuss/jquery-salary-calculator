@@ -10,8 +10,37 @@
     <title>Week7 Salary Calculator</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h2>Salary Calculator aka Who Gets Fired...</h2>
     </header>
+    <div class="input-container">
+        <h3>Add Employee</h3>
+        <input type="text" placeholder="First Name" id="firstNameIn"/>
+        <input type="text" placeholder="Last Name" id="lastNameIn"/>
+        <input type="number" placeholder="ID" id="idIn"/>
+        <input type="text" placeholder="Title" id="titleIn"/>
+        <input type="number" placeholder="Annual Salary" id="salaryIn"/>
+        <br>
+        <button id="submitButton">Submit</button>
+    </div>
+    <div class="table-container">
+        <h3>Employees</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <h2>Total Monthly: $<span id="totalMonthlyOut">TOTALSALARIES</span></h2>
+    </div>
 </body>
 </html>
