@@ -17,15 +17,20 @@ function enterEmployee() {
         title: $('#titleIn').val(),
         annualSalary: $('#salaryIn').val()
     }
-
-    console.log(newEmployee);
-    
+    // console.log(newEmployee);
     // push into employee array
-
+    employees.push(newEmployee);
+    // console.log(employees);
+    
     // render to DOM
-
+    renderToDom();
     // clear inputs
 
     // calculate totalMonthlySalaries
 
 } // end enterEmployee
+
+function renderToDom() {
+    console.log(employees);
+    
+} // end renderToDom
