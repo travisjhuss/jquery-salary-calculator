@@ -28,6 +28,7 @@ function enterEmployee() {
     // clear inputs
     clearInputs();
     // calculate totalMonthlySalaries
+    calculateMonthlySalaries();
 
 } // end enterEmployee
 
@@ -43,7 +44,7 @@ function renderToDom() {
              <td>${employee.lastName}</td>
              <td>${employee.id}</td>
              <td>${employee.title}</td>
-             <td>${employee.annualSalary}</td>
+             <td>$${employee.annualSalary}</td>
              <td><button class="deleteButton">Delete</button></td>
             </tr>
         `);
@@ -60,7 +61,19 @@ function clearInputs() {
 } // end clearInputs
 
 function deleteEmployee() {
-    console.log('clicked delete');
+    // console.log('clicked delete');
     $(this).closest('tr').remove();
+    
 
 } // end deleteEmployee
+
+
+function calculateMonthlySalaries() {
+    let totalMonthlySalaries = 0;
+    for (let employee of employees) {
+        totalMonthlySalaries += Number(employee.annualSalary);
+    }
+    $('#totalMonthlyOut').empty();
+    $('#totalMonthlyOut').append(totalMonthlySalaries);
+    //return totalMonthlySalaries;
+} // end calculateMonthlySalaries
