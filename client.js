@@ -21,7 +21,7 @@ function enterEmployee() {
     // push into employee array
     employees.push(newEmployee);
     // console.log(employees);
-    
+
     // render to DOM
     renderToDom();
     // clear inputs
@@ -31,6 +31,21 @@ function enterEmployee() {
 } // end enterEmployee
 
 function renderToDom() {
-    console.log(employees);
-    
+    // empty list
+    $('#employeeList').empty();
+    //for loop to display employees array
+    for (let employee of employees) {
+
+        let employeeRow = $(`
+            <tr class="employee">
+             <td>${employee.firstName}</td>
+             <td>${employee.lastName}</td>
+             <td>${employee.id}</td>
+             <td>${employee.title}</td>
+             <td>${employee.annualSalary}</td>
+             <td>Delete</td>
+            </tr>
+        `);
+        $('#employeeList').append(employeeRow);
+    }
 } // end renderToDom
