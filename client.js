@@ -71,9 +71,10 @@ function deleteEmployee() {
 function calculateMonthlySalaries() {
     let totalMonthlySalaries = 0;
     for (let employee of employees) {
-        totalMonthlySalaries += Number(employee.annualSalary);
+        let monthlySalary = Number(employee.annualSalary) / 12;
+        totalMonthlySalaries += monthlySalary;
     }
     $('#totalMonthlyOut').empty();
-    $('#totalMonthlyOut').append(totalMonthlySalaries);
+    $('#totalMonthlyOut').append(totalMonthlySalaries.toFixed(2));
     //return totalMonthlySalaries;
 } // end calculateMonthlySalaries
