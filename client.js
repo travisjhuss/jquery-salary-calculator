@@ -65,15 +65,17 @@ function deleteEmployee() {
     // console.log('clicked delete');
 
     // assign variable to removed item
-    let test = $(this).parent().parent().data();
-    console.log(test);
-    
-    
+    let employeeIndex = $(this).parent().parent().data('index');
+    console.log(employeeIndex);
+
     // remove from DOM
     $(this).closest('tr').remove();
 
     // delete from array
-    // deleteFromArray();
+    deleteFromArray(employeeIndex);
+
+    // render back to DOM
+    // renderToDom();
 
 } // end deleteEmployee
 
@@ -95,3 +97,13 @@ function calculateMonthlySalaries() {
 
     //return totalMonthlySalaries;
 } // end calculateMonthlySalaries
+
+function deleteFromArray(index) {
+    // loop over array, find matching index, splice out
+    for (let i = 0; i < employees.length; i++) {
+        if (index === i) {
+            console.log(employees[i]);
+
+        }
+    }
+} // end deleteFromArray
