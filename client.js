@@ -39,7 +39,7 @@ function renderToDom() {
     for (let i = 0; i < employees.length; i++) {
 
         let employeeRow = $(`
-            <tr class="employee" data-employee${i}>
+            <tr class="employee" id="employee${i}">
              <td>${employees[i].firstName}</td>
              <td>${employees[i].lastName}</td>
              <td>${employees[i].id}</td>
@@ -49,6 +49,7 @@ function renderToDom() {
             </tr>
         `);
         $('#employeeList').append(employeeRow);
+        $(`#employee${i}`).data('index', i)
     }
 } // end renderToDom
 
@@ -62,12 +63,17 @@ function clearInputs() {
 
 function deleteEmployee() {
     // console.log('clicked delete');
-    let test = ($(this).parent().index(), 1);
+
+    // assign variable to removed item
+    let test = $(this).parent().parent().data();
     console.log(test);
     
-    // employees.splice($(this).parent().index(), 1);
+    
+    // remove from DOM
     $(this).closest('tr').remove();
 
+    // delete from array
+    // deleteFromArray();
 
 } // end deleteEmployee
 
