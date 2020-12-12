@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,38 +10,44 @@
     <link rel="stylesheet" href="style.css">
     <title>Week7 Salary Calculator</title>
 </head>
-<body>
-    <header class="header">
-        <h2>Salary Calculator aka Who Gets Fired...</h2>
-    </header>
-    <div class="input-container">
-        <h3>Add Employee</h3>
-        <input type="text" placeholder="First Name" id="firstNameIn"/>
-        <input type="text" placeholder="Last Name" id="lastNameIn"/>
-        <input type="number" placeholder="ID" id="idIn"/>
-        <input type="text" placeholder="Title" id="titleIn"/>
-        <input type="number" placeholder="Annual Salary" id="salaryIn"/>
-        <br>
-        <button id="submitButton">Submit</button>
-    </div>
-    <div class="table-container">
-        <h3>Employees</h3>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Annual Salary</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="employeeList">
 
-            </tbody>
-        </table>
-        <h2>Total Monthly: $<span id="totalMonthlyOut">0.00</span></h2>
+<body>
+    <header class="header border-dark">
+        <h2>Salary Calculator</h2>
+    </header>
+    <div class="container">
+        <h3>Add Employee</h3>
+        <div class="input-container">
+            <input type="text" placeholder="First Name" id="firstNameIn" />
+            <input type="text" placeholder="Last Name" id="lastNameIn" />
+            <input type="number" placeholder="ID" id="idIn" />
+            <input type="text" placeholder="Title" id="titleIn" />
+            <input type="number" placeholder="Annual Salary" id="salaryIn" />
+
+        </div>
+        <div class="d-grid gap-2">
+            <button id="submitButton" class="btn btn-dark">Submit</button>
+        </div>
+        <div class="table-container">
+            <h3>Employees</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Annual Salary</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="employeeList">
+
+                </tbody>
+            </table>
+            <h2>Total Monthly: $<span id="totalMonthlyOut">0.00</span></h2>
+        </div>
     </div>
 </body>
+
 </html>

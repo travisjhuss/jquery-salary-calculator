@@ -101,11 +101,7 @@ function calculateMonthlySalaries() {
 } // end calculateMonthlySalaries
 
 function deleteFromArray(index) {
-    // loop over array, find matching index, splice out
-    for (let i = 0; i < employees.length; i++) {
-        if (index === i) {
-            employees.splice(i, 1);
+    // remove object in array at given index
+    employees.splice(index, 1);
 
-        }
-    }
 } // end deleteFromArray
