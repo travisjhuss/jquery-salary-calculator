@@ -36,15 +36,15 @@ function renderToDom() {
     // empty list
     $('#employeeList').empty();
     //for loop to display employees array
-    for (let employee of employees) {
+    for (let i = 0; i < employees.length; i++) {
 
         let employeeRow = $(`
-            <tr class="employee">
-             <td>${employee.firstName}</td>
-             <td>${employee.lastName}</td>
-             <td>${employee.id}</td>
-             <td>${employee.title}</td>
-             <td>$${employee.annualSalary}</td>
+            <tr class="employee" data-employee${i}>
+             <td>${employees[i].firstName}</td>
+             <td>${employees[i].lastName}</td>
+             <td>${employees[i].id}</td>
+             <td>${employees[i].title}</td>
+             <td>$${employees[i].annualSalary}</td>
              <td><button class="deleteButton">Delete</button></td>
             </tr>
         `);
@@ -62,8 +62,12 @@ function clearInputs() {
 
 function deleteEmployee() {
     // console.log('clicked delete');
-    $(this).closest('tr').remove();
+    let test = ($(this).parent().index(), 1);
+    console.log(test);
     
+    // employees.splice($(this).parent().index(), 1);
+    $(this).closest('tr').remove();
+
 
 } // end deleteEmployee
 
@@ -76,5 +80,12 @@ function calculateMonthlySalaries() {
     }
     $('#totalMonthlyOut').empty();
     $('#totalMonthlyOut').append(totalMonthlySalaries.toFixed(2));
+
+    //if totalMonthly salaries > 20k, turn background red
+    if (totalMonthlySalaries > 20000) {
+        $('#totalMonthlyOut').addClass('overBudget');
+    } // end if
+
+
     //return totalMonthlySalaries;
 } // end calculateMonthlySalaries
