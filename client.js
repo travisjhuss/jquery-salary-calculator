@@ -45,7 +45,7 @@ function renderToDom() {
              <td>${employees[i].id}</td>
              <td>${employees[i].title}</td>
              <td>$${employees[i].annualSalary}</td>
-             <td><button class="deleteButton">Delete</button></td>
+             <td><button class="deleteButton btn btn-dark">Delete</button></td>
             </tr>
         `);
         $('#employeeList').append(employeeRow);
@@ -93,9 +93,9 @@ function calculateMonthlySalaries() {
 
     //if totalMonthly salaries > 20k, turn background red
     if (totalMonthlySalaries > 20000) {
-        $('#totalMonthlyOut').addClass('overBudget');
+        $('#totalDisplay').addClass('overBudget');
     } else {
-        $('#totalMonthlyOut').removeClass('overBudget');
+        $('#totalDisplay').removeClass('overBudget');
     } // end if
 
 } // end calculateMonthlySalaries

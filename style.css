@@ -1,23 +1,39 @@
+body {
+    background-color: rgba(212,201,163,0.3);
+}
+
 .header {
-    background-color: #ffefdb;
+    background-color:rgba(212,201,163,0.8);
     color: #343a40;
     padding-top: 15px;
     text-align: center;
     border-bottom: 10px groove;
 }
 
-.overBudget {
-    background-color: red;
+.add-employee {
+    padding-top: 10px;
 }
+
 
 .input-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+    margin-bottom: 10px;
 }
 
-body {
-    background-color: gray;
+#submitButton {
+    margin-bottom: 20px;
 }
 
+.table-container {
+    text-align: center;
+}
+
+#totalDisplay {
+    text-align: right;
+}
+
+.overBudget {
+    background-color: red;
+}
