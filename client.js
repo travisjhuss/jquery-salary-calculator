@@ -69,14 +69,16 @@ function deleteEmployee() {
     console.log(employeeIndex);
 
     // remove from DOM
-    $(this).closest('tr').remove();
+    //$(this).closest('tr').remove(); //don't need now with renderToDom called in here
 
     // delete from array
     deleteFromArray(employeeIndex);
 
-    // render back to DOM
-    // renderToDom();
+    // update DOM
+    renderToDom();
 
+    // update total monthly salaries
+    calculateMonthlySalaries();
 } // end deleteEmployee
 
 
@@ -92,17 +94,17 @@ function calculateMonthlySalaries() {
     //if totalMonthly salaries > 20k, turn background red
     if (totalMonthlySalaries > 20000) {
         $('#totalMonthlyOut').addClass('overBudget');
+    } else {
+        $('#totalMonthlyOut').removeClass('overBudget');
     } // end if
 
-
-    //return totalMonthlySalaries;
 } // end calculateMonthlySalaries
 
 function deleteFromArray(index) {
     // loop over array, find matching index, splice out
     for (let i = 0; i < employees.length; i++) {
         if (index === i) {
-            console.log(employees[i]);
+            employees.splice(i, 1);
 
         }
     }
