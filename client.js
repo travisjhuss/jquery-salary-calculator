@@ -9,7 +9,7 @@ function handleReady() {
 } // end handleReady
 
 function enterEmployee() {
-    console.log('clicked');
+    // console.log('clicked');
     // create employee object
     let newEmployee = {
         firstName: $('#firstNameIn').val(),
@@ -19,14 +19,31 @@ function enterEmployee() {
         annualSalary: $('#salaryIn').val()
     }
     // console.log(newEmployee);
-    // push into employee array
-    employees.push(newEmployee);
+
+    // check to see inputs filled
+    if (
+        !newEmployee.firstName ||
+        !newEmployee.lastName ||
+        !newEmployee.id ||
+        !newEmployee.title ||
+        !newEmployee.annualSalary
+    ) {
+        // alert user of missing fields
+        $('.missingFields').empty();
+        $('.missingFields').append('Missing data *');
+
+    } else {
+        // push into employee array
+        employees.push(newEmployee);
+        // clear inputs
+        clearInputs();
+        $('.missingFields').empty();
+    }
     // console.log(employees);
 
     // render to DOM
     renderToDom();
-    // clear inputs
-    clearInputs();
+    
     // calculate totalMonthlySalaries
     calculateMonthlySalaries();
 

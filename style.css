@@ -31,6 +31,12 @@ body {
     text-align: right;
 }
 
+.missingFields {
+    color: red;
+    font-weight: 300;
+    text-align: right
+}
+
 .overBudget {
     background-color: red;
 }
