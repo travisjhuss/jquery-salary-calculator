@@ -18,8 +18,8 @@ function enterEmployee() {
         title: $('#titleIn').val(),
         annualSalary: $('#salaryIn').val()
     }
+    newEmployee.monthlySalary = (Number(newEmployee.annualSalary) / 12).toFixed(2);
     // console.log(newEmployee);
-
     // check to see inputs filled
     if (
         !newEmployee.firstName ||
@@ -62,6 +62,7 @@ function renderToDom() {
              <td>${employees[i].id}</td>
              <td>${employees[i].title}</td>
              <td>$${employees[i].annualSalary}</td>
+             <td>$${employees[i].monthlySalary}</td>
              <td><button class="deleteButton btn btn-dark">Delete</button></td>
             </tr>
         `);
@@ -83,7 +84,7 @@ function deleteEmployee() {
 
     // assign variable to removed item
     let employeeIndex = $(this).parent().parent().data('index');
-    console.log(employeeIndex);
+    // console.log(employeeIndex);
 
     // remove from DOM
     //$(this).closest('tr').remove(); //don't need now with renderToDom called in here
@@ -102,8 +103,8 @@ function deleteEmployee() {
 function calculateMonthlySalaries() {
     let totalMonthlySalaries = 0;
     for (let employee of employees) {
-        let monthlySalary = Number(employee.annualSalary) / 12;
-        totalMonthlySalaries += monthlySalary;
+        // let monthlySalary = Number(employee.annualSalary) / 12;
+        totalMonthlySalaries += Number(employee.monthlySalary);
     }
     $('#totalMonthlyOut').empty();
     $('#totalMonthlyOut').append(totalMonthlySalaries.toFixed(2));
