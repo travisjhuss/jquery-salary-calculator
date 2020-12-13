@@ -7,24 +7,27 @@ body {
     color: #343a40;
     padding-top: 15px;
     text-align: center;
-    border-bottom: 10px groove;
+    border-bottom: 7px groove;
 }
 
 .add-employee {
-    padding-top: 10px;
+    margin-top: 15px;
 }
 
 
 .input-container {
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #submitButton {
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .table-container {
     text-align: center;
+    margin-top: 15px;
 }
 
 #totalDisplay {
